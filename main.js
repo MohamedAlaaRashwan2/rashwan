@@ -1,3 +1,12 @@
+ 
+window.addEventListener("DOMContentLoaded", () => {
+  const loader = document.querySelector(".loader-wrapper");
+  const loader2 = document.querySelector(".loader");
+  loader2.classList.add("hidden");
+  loader.classList.remove("loader-wrapper");
+  document.body.removeAttribute("class");
+  console.log(loader2);
+});
 // Start Navbar
 const links = document.querySelectorAll('nav .container .main-nav li a');
 links.forEach(el => {
