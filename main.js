@@ -194,3 +194,33 @@ const portfolioobserver = new IntersectionObserver((entries) => {
 }, {threshold: 0.1, rootMargin: '0px 0px -150px 0px'});
 portfolio.forEach(portfolio => portfolioobserver.observe(portfolio));
 // End Portfolio
+document.getElementById("contactForm").addEventListener("submit", async function(e) {
+  e.preventDefault();
+
+  const form = e.target;
+  const formData = new FormData(form);
+  const data = Object.fromEntries(formData.entries());
+
+  console.log("Data being sent:", data); // للتأكد
+
+  try {
+    const res = await fetch("https://formspree.io/f/mdkgvvgl", {
+      method: "POST",
+      headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
+    });
+
+    const json = await res.json();
+    if (res.ok) {
+      console.log("✅ Message sent:", json);
+    } else {
+      console.error("❌ Error sending form:", json);
+    }
+
+  } catch (err) {
+    console.error("❌ Network error:", err);
+  }
+});
