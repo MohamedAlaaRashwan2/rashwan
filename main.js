@@ -200,9 +200,6 @@ document.getElementById("contactForm").addEventListener("submit", async function
   const form = e.target;
   const formData = new FormData(form);
   const data = Object.fromEntries(formData.entries());
-
-  console.log("Data being sent:", data); // للتأكد
-
   try {
     const res = await fetch("https://formspree.io/f/mdkgvvgl", {
       method: "POST",
@@ -212,15 +209,14 @@ document.getElementById("contactForm").addEventListener("submit", async function
       },
       body: JSON.stringify(data)
     });
-
-    const json = await res.json();
+    form.reset();
     if (res.ok) {
-      console.log("✅ Message sent:", json);
+      console.log("✅ Message sent");
     } else {
-      console.error("❌ Error sending form:", json);
+      console.error("❌ Error sending form");
     }
 
   } catch (err) {
-    console.error("❌ Network error:", err);
+    console.error("❌ Network error");
   }
 });

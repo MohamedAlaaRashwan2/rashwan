@@ -358,12 +358,12 @@
         </div>
         <div class="container">
             <form action="https://formspree.io/f/mdkgvvgl" method="POST" id="contactForm">
-                <input type="text" placeholder="Your Name">
-                <input type="email" placeholder="Your Email">
-                <input type="text" placeholder="Your Phone">
-                <textarea name="" id="" placeholder="Your Message"></textarea>
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <input type="text" name="phone" placeholder="Your Phone">
+                <textarea name="message" placeholder="Your Message" required></textarea>
                 <button type="submit">Send Message</button>
-            </form>
+              </form>              
         </div>
     </div>
     <!-- End Contact -->
