@@ -1132,6 +1132,25 @@ svg {
     overflow: hidden; 
 }
 
+.portfolio .show-more{
+    text-align: center;
+    margin: 50px 0 0;
+}
+
+.portfolio .show-more button{
+    padding: 10px 20px;
+    background-color: var(--main-color);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.portfolio .show-more button:hover{
+    background-color: var(--main-color-alt);
+}
+
 .portfolio .container{
     display: flex;
     flex-wrap: wrap;
@@ -1149,6 +1168,10 @@ svg {
     transition: 0.7s ease-in-out;
     opacity: 0;
     transform: translateY(50%);
+}
+.portfolio .container .box.five{
+    display: none;
+    transition: 0.7s ease-in-out;
 }
 
 .portfolio .container .box.one,

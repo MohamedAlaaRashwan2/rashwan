@@ -220,3 +220,16 @@ document.getElementById("contactForm").addEventListener("submit", async function
     console.error("❌ Network error");
   }
 });
+
+const showMoreBtn = document.getElementById('show-more-btn');
+showMoreBtn.addEventListener('click', () => {
+  const portfolio = document.querySelectorAll('.portfolio .container .box.five');
+  if (portfolio[0].style.display === 'block') {
+    portfolio[0].style.display = 'none';
+    showMoreBtn.innerHTML = 'Show More';
+  } else {
+    portfolio[0].style.display = 'block';
+    showMoreBtn.innerHTML = 'Show Less';
+  }
+});
+
