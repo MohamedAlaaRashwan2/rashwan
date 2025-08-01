@@ -147,6 +147,7 @@ boxes.forEach(box => boxobserver.observe(box))
 // End Services
 
 // Start Skills
+
 const skills = document.getElementById('skills');
 const skillsNums = document.querySelectorAll('.skills .container .skill .text .num');
 const circle = document.querySelectorAll('.skills .container .skill circle');
@@ -191,10 +192,10 @@ const portfolioobserver = new IntersectionObserver((entries) => {
       portfolioobserver.unobserve(el.target);
     }
   })
-}, {threshold: 0.1, rootMargin: '0px 0px -150px 0px'});
+}, { threshold: 0.1, rootMargin: '0px 0px -150px 0px' });
 portfolio.forEach(portfolio => portfolioobserver.observe(portfolio));
 // End Portfolio
-document.getElementById("contactForm").addEventListener("submit", async function(e) {
+document.getElementById("contactForm").addEventListener("submit", async function (e) {
   e.preventDefault();
 
   const form = e.target;
@@ -233,3 +234,27 @@ showMoreBtn.addEventListener('click', () => {
   }
 });
 
+const section = document.querySelectorAll(".section");
+
+const options3 = {
+  threshold: 0.6,
+  rootMargin: '0px 0px -100px 0px'
+};
+const sectionObserves = new IntersectionObserver((entry) =>
+  entry.forEach((e) => {
+    if (e.isIntersecting) {
+      const id = e.target.id;
+      links.forEach((li) => {
+        li.classList.remove("active")
+        if (li.getAttribute("href") === `#${id}`) {
+          li.classList.add("active")
+        }
+      })
+
+    }
+  })
+  , options3);
+
+section.forEach(ew => {
+  sectionObserves.observe(ew);
+}); 

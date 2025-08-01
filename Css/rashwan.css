@@ -33,10 +33,12 @@ body {
     font-style: normal;
     background-color: var(--section-background);
 }
+
 .bodyHeader {
     height: 100vh;
     overflow: hidden;
 }
+
 a {
     text-decoration: none;
 }
@@ -49,7 +51,14 @@ ul {
 }
 
 ::-webkit-scrollbar {
+    transition: 550ms;
     width: 5px;
+    position: fixed;
+    transition: 600ms;
+}
+
+::-webkit-scrollbar:hover {
+    width: 10px;
 }
 
 ::-webkit-scrollbar-track {
